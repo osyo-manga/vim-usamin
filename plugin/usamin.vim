@@ -8,7 +8,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-nnoremap <Plug>(usamin-set) a<usa></min><ESC>
+nnoremap <Plug>(usamin-set) a<usa><min><ESC>
 
 let g:usamin_enable = 0
 

@@ -19,14 +19,13 @@ function! usamin#get_usamin()
 	return usamin[ s:count % len(usamin) ]
 endfunction
 
-
 function! usamin#update()
 	syntax match tagUsaminHiddenBegin /<usa>/ conceal
-	syntax match tagUsaminHiddenEnd  /<\/min>/ conceal
+	syntax match tagUsaminHiddenEnd  /<min>/ conceal
 
 	if &modifiable
 		let usamin = usamin#get_usamin()
-		call map(map(getline(1, "$"), 'substitute(v:val, ''<usa>\zs.\{-}\ze<\/min>'', usamin, ''g'')'), 'setline(v:key+1, v:val)')
+		call map(map(getline(1, "$"), 'substitute(v:val, ''<usa>\zs.\{-}\ze<min>'', usamin, ''g'')'), 'setline(v:key+1, v:val)')
 	endif
 endfunction
 
